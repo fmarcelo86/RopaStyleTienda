@@ -1,0 +1,49 @@
+    <div class="container-fluid formDatosEnvio" style="padding-top: 60px">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6 mx-auto">
+          <!-- general form elements -->
+          <div class="card card-primary ">
+            <div class="card-header">
+              <h5 class="card-title">Datos de envio</h5>
+              <h6 class="text-muted importante">* Importante: Recuerde  que el precio del transporte no está incluido y dependerá del lugar de entrega, este se deberá cancelar junto con el valor del pedido en el momento de la entrega</h6>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+
+                  <div class="input-group mb-3">                    
+                    <select name="tipoIdentificacion" [(ngModel)]="pedidoRequest.pedidosCliente.tipoIdentificacion" class="form-control form-control-sm" >
+                        <option *ngFor="let tDocumento of tiposDocumeto" value="{{tDocumento.sigla}}">{{tDocumento.nombre}}</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Documento" name="identificacion" [(ngModel)]="pedidoRequest.pedidosCliente.identificacion">                 
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="pedidoRequest.pedidosCliente.nombre">                    
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <label class="form-control">Fecha y hora de entrega: </label>
+                    <input type="datetime-local" class="form-control" placeholder="fechaHora" name="fechaHora" [(ngModel)]="pedidoRequest.pedidosCliente.fechaHora">                 
+                  </div>
+
+                  <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Dirección" name="direccion" [(ngModel)]="pedidoRequest.pedidosCliente.direccion">                    
+                  </div>
+
+                  <div class="d-flex" style="padding-top: 5px">     
+                      <button type="button" class="btn btn-primary btn-sm ml-auto" (click)="realizarPedido()" >Confirmar</button>
+                  </div>
+
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+

@@ -1,0 +1,56 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <img src="assets/img/tiendalogo.png" width="120px;" >
+    <a class="navbar-brand" href="#">RopaStyle</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Inicio
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/productos', 1]">Camisas formales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/productos', 2]">Pantalones formales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/productos', 3]">Chaquetas</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-2 col-sm-1" style="background-color: azure; height: 90px;">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-10 mini-basket">
+            <p class="mini-basket-title">
+              <a [routerLink]="['/carrito']">
+                <span class="fa fa-shopping-cart">
+                </span> Carrito
+              </a>
+            </p>
+            <div class="row">
+              <div class="col-sm-8 col-sm-8 col-xs-8">
+                <p class="mini-basket-summary">
+                  Precio<br>
+                  <span>{{productosCarrito.getPrecioTotal() | currency}}</span>
+                </p>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <p class="mini-basket-summary">
+                  Cantidad<br>
+                  <span>{{productosCarrito.getCantidad()}}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</nav>

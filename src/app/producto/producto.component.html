@@ -1,0 +1,21 @@
+<!-- Page Content -->
+<div class="container productos">
+
+  <!-- Page Features -->
+  <div class="row text-center">    
+      <div class="col-lg-3 col-md-6 mb-4" *ngFor="let producto of productos">
+          <div class="card">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/300x200" alt=""></a>
+            <div class="card-body">
+              <h5 class="card-title">{{producto.nombre}}</h5>
+              <h6>{{producto.precio | currency}}</h6>
+              <p class="card-text">{{producto.descripcion}}</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              <button type="button" [disabled]="productosCarrito.cantidadTotal >= 5" class="btn btn-outline-success btn-sm" (click)="agregarProducto(producto)">Carrito</button>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>

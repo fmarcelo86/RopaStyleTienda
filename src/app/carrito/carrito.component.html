@@ -1,0 +1,21 @@
+<div class="row col-12">
+    <table class="table table-sm-12">
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let producto of productosCarrito.mostarProductos()">
+          <tr>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.cantidad}}</td>
+            <td>{{producto.precio | currency}}</td>
+          </tr>         
+        </tbody>
+      </table>
+  </div>
+  <div class="card-body d-flex">     
+      <button type="button" class="btn btn-primary btn-sm ml-auto" [routerLink]="['/datos_envio']">Continue</button>
+  </div>
